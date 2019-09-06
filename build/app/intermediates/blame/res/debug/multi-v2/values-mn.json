@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Volumes/CODECTI/AndroidStudioProjects/uber_clone_with_flutter/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-mn/values-mn.xml",
+            "outputFile": "/Volumes/CODECTI/AndroidStudioProjects/clone_uber_flutter/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-mn/values-mn.xml",
             "map": [
                 {
                     "source": "/Users/macbookair/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-16.0.1.aar/9770fd374abb67f0788eec792bd12226/res/values-mn/values.xml",

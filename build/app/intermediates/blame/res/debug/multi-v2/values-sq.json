@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Volumes/CODECTI/AndroidStudioProjects/uber_clone_with_flutter/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-sq/values-sq.xml",
+            "outputFile": "/Volumes/CODECTI/AndroidStudioProjects/clone_uber_flutter/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-sq/values-sq.xml",
             "map": [
                 {
                     "source": "/Users/macbookair/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/e6a945c425519a349c7ed9bbc8fbb294/res/values-sq/values-sq.xml",

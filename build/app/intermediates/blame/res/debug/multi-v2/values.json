@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Volumes/CODECTI/AndroidStudioProjects/uber_clone_with_flutter/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/Volumes/CODECTI/AndroidStudioProjects/clone_uber_flutter/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
                     "source": "/Users/macbookair/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-16.1.0.aar/2aa56d5ee59438659de352977cc7abac/res/values/values.xml",
@@ -40,23 +40,6 @@
                     }
                 },
                 {
-                    "source": "/Volumes/CODECTI/AndroidStudioProjects/uber_clone_with_flutter/build/app/generated/res/google-services/debug/values/values.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,199,309,391,495,598,718,817",
-                        "endColumns": "143,109,81,103,102,119,98,75",
-                        "endOffsets": "194,304,386,490,593,713,812,888"
-                    },
-                    "to": {
-                        "startLines": "391,392,393,394,395,396,397,398",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "21412,21556,21666,21748,21852,21955,22075,22174",
-                        "endColumns": "143,109,81,103,102,119,98,75",
-                        "endOffsets": "21551,21661,21743,21847,21950,22070,22169,22245"
-                    }
-                },
-                {
                     "source": "/Users/macbookair/.gradle/caches/transforms-1/files-1.1/jetified-play-services-maps-16.1.0.aar/d8a1212eb654b0e7dd4b4f3f340cd99c/res/values/values.xml",
                     "from": {
                         "startLines": "4",
@@ -76,7 +59,7 @@
                     }
                 },
                 {
-                    "source": "/Volumes/CODECTI/AndroidStudioProjects/uber_clone_with_flutter/android/app/src/main/res/values/styles.xml",
+                    "source": "/Volumes/CODECTI/AndroidStudioProjects/clone_uber_flutter/android/app/src/main/res/values/styles.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -111,6 +94,23 @@
                         "endLines": "3,4,5,6,7,8,9,10,255,333,373,374,375,376,377,378,379,380,382,383,384,385,386,387,388,389,390",
                         "endColumns": "89,79,89,89,79,80,79,79,20,20,104,180,124,106,179,122,115,102,187,104,180,124,174,147,62,61,78",
                         "endOffsets": "251,331,421,511,591,672,752,832,14869,16708,19179,19360,19485,19592,19772,19895,20011,20114,20469,20574,20755,20880,21055,21203,21266,21328,21407"
+                    }
+                },
+                {
+                    "source": "/Volumes/CODECTI/AndroidStudioProjects/clone_uber_flutter/build/app/generated/res/google-services/debug/values/values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,199,309,391,495,598,718,817",
+                        "endColumns": "143,109,81,103,102,119,98,75",
+                        "endOffsets": "194,304,386,490,593,713,812,888"
+                    },
+                    "to": {
+                        "startLines": "391,392,393,394,395,396,397,398",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "21412,21556,21666,21748,21852,21955,22075,22174",
+                        "endColumns": "143,109,81,103,102,119,98,75",
+                        "endOffsets": "21551,21661,21743,21847,21950,22070,22169,22245"
                     }
                 },
                 {

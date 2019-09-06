@@ -1,2 +1,2 @@
-# Referenced at /Volumes/CODECTI/AndroidStudioProjects/uber_clone_with_flutter/build/app/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:28
+# Referenced at /Volumes/CODECTI/AndroidStudioProjects/clone_uber_flutter/build/app/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:28
 -keep class io.flutter.app.FlutterApplication { <init>(...); }

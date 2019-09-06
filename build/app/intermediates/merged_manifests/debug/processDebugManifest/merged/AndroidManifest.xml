@@ -33,7 +33,7 @@
         android:label="uber_clone" >
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="APP_KEY" />
+            android:value="AIzaSyAAw4woNIssZ0P5Lonws9W-9LTRHRCMyqc" />
 
         <activity
             android:name="com.santosenoque.uber_clone.MainActivity"
