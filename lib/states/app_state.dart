@@ -1,3 +1,5 @@
+//En este archivo se realiza las acciones del estado de la aplicación
+//las acciones del mapa
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:geolocator/geolocator.dart';
@@ -24,6 +26,7 @@ class AppState with ChangeNotifier {
     _getUserLocation();
   }
 // ! TO GET THE USERS LOCATION
+//Se encarga de obtener la ubicación del usuario en el mapa
   void _getUserLocation() async {
     Position position = await Geolocator()
         .getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
@@ -31,11 +34,15 @@ class AppState with ChangeNotifier {
         .placemarkFromCoordinates(position.latitude, position.longitude);
     _initialPosition = LatLng(position.latitude, position.longitude);
     print("initial position is : ${_initialPosition.toString()}");
+    //Se encarga de mostrar en el campo de texto el nombre de
+    // la ubicación del usuario
     locationController.text = placemark[0].name;
     notifyListeners();
   }
 
   // ! TO CREATE ROUTE
+  //Se encarga de crear la ruta a trazar definiendo los puntos a
+  //recorrer
   void createRoute(String encondedPoly) {
     _polyLines.add(Polyline(
         polylineId: PolylineId(_lastPosition.toString()),
@@ -46,6 +53,9 @@ class AppState with ChangeNotifier {
   }
 
   // ! ADD A MARKER ON THE MAO
+  //Se encarga de añadir el marcador, el origen y el destino
+  //Recibiendo como parámetros la ubicación del usuario
+  // y la dirección de destino
   void _addMarker(LatLng location, String address) {
     _markers.add(Marker(
         markerId: MarkerId(_lastPosition.toString()),
@@ -55,8 +65,17 @@ class AppState with ChangeNotifier {
     notifyListeners();
   }
 
+  /* 
+    [12.2, 312.2, 321.3, 231.4, 234.5, 2342.6, 2341.7, 1321.4]
+    (0-------1------2------3------4------5-------6-------7)
+    [lat,  lng,    lat,    lng,   lat,   lng,   lat,    lng]
+  */
   // ! CREATE LAGLNG LIST
+  //Se encarga de convertir una lista de doubles(decimales) a
+  //latitudes y longitudes
+  //Recibe como parámetro, una lista de puntos a recorrer
   List<LatLng> _convertToLatLng(List points) {
+    //Se crea una lista de tipo latitud y longitud
     List<LatLng> result = <LatLng>[];
     for (int i = 0; i < points.length; i++) {
       if (i % 2 != 0) {
@@ -67,6 +86,8 @@ class AppState with ChangeNotifier {
   }
 
   // !DECODE POLY
+  //Se encarga de mostrar la lista de los puntos trazados
+  //para la ruta del mapa decodificados
   List _decodePoly(String poly) {
     var list = poly.codeUnits;
     var lList = new List();
@@ -102,6 +123,8 @@ class AppState with ChangeNotifier {
   }
 
   // ! SEND REQUEST
+  //Se encarga de enviar los requerimientos para la generación
+  //de la lista de marcadores de lugares
   void sendRequest(String intendedLocation) async {
     List<Placemark> placemark =
         await Geolocator().placemarkFromAddress(intendedLocation);
@@ -109,6 +132,8 @@ class AppState with ChangeNotifier {
     double longitude = placemark[0].position.longitude;
     LatLng destination = LatLng(latitude, longitude);
     _addMarker(destination, intendedLocation);
+    //Se guarda en una variable de tipo String las coordenadas
+    //obtenidas en el api decodificado
     String route = await _googleMapsServices.getRouteCoordinates(
         _initialPosition, destination);
     createRoute(route);

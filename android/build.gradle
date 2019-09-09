@@ -9,6 +9,8 @@ buildscript {
         classpath 'com.google.gms:google-services:4.0.1'
     }
 
+    //Si provoca un error de compilación, agregar estas líneas de
+    //código
     subprojects {
         project.configurations.all {
             resolutionStrategy.eachDependency { details ->

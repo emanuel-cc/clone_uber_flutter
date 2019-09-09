@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.santosenoque.uber_clone">
-
+    <!--Escribir esta línea para permisos de ubicación-->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <application
@@ -8,6 +8,7 @@
         android:label="uber_clone"
         android:icon="@mipmap/ic_launcher">
 
+        <!--Establecer aquí tu api key de google-->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAAw4woNIssZ0P5Lonws9W-9LTRHRCMyqc"/>

@@ -1,3 +1,4 @@
+//Esta es la página principal del mapa
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:provider/provider.dart';
@@ -19,6 +20,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
+//Aquí se construye el mapa
 class Map extends StatefulWidget {
   @override
   _MapState createState() => _MapState();
@@ -28,6 +30,9 @@ class _MapState extends State<Map> {
   @override
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
+    //Se evalúa si la posición inicial es nulo o todavía no se ha
+    //permitido el acceso a la ubicación del usuario
+    //Se mostrará un circularprogressindicator
     return appState.initialPosition == null
         ? Container(
             alignment: Alignment.center,
@@ -48,7 +53,8 @@ class _MapState extends State<Map> {
                 onCameraMove: appState.onCameraMove,
                 polylines: appState.polyLines,
               ),
-
+              //Aquí se muestra el campo donde se muestra el nombre
+              //de nuestra ubicación
               Positioned(
                 top: 50.0,
                 right: 15.0,
@@ -87,7 +93,7 @@ class _MapState extends State<Map> {
                   ),
                 ),
               ),
-
+              //Aquí se escribe el lugar de la ruta de destino
               Positioned(
                 top: 105.0,
                 right: 15.0,
