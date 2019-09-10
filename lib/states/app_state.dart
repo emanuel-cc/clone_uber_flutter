@@ -37,7 +37,9 @@ class AppState with ChangeNotifier {
     //Se encarga de mostrar en el campo de texto el nombre de
     // la ubicación del usuario
     locationController.text = placemark[0].name;
+    
     notifyListeners();
+    
   }
 
   // ! TO CREATE ROUTE
