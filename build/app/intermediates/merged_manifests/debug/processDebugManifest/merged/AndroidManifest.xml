@@ -12,6 +12,7 @@
          to allow setting breakpoints, to provide hot reload, etc.
     -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Escribir esta línea para permisos de ubicación -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
     <!-- <uses-sdk android:minSdkVersion="14" /> -->
@@ -31,6 +32,8 @@
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
         android:label="uber_clone" >
+
+        <!-- Establecer aquí tu api key de google -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAAw4woNIssZ0P5Lonws9W-9LTRHRCMyqc" />

@@ -52,7 +52,10 @@ class AppState with ChangeNotifier {
         points: _convertToLatLng(_decodePoly(encondedPoly)),
         color: Colors.black));
     notifyListeners();
+    
   }
+
+  
 
   // ! ADD A MARKER ON THE MAO
   //Se encarga de añadir el marcador, el origen y el destino
@@ -65,6 +68,7 @@ class AppState with ChangeNotifier {
         infoWindow: InfoWindow(title: address, snippet: "go here"),
         icon: BitmapDescriptor.defaultMarker));
     notifyListeners();
+    
   }
 
   /* 
@@ -128,17 +132,25 @@ class AppState with ChangeNotifier {
   //Se encarga de enviar los requerimientos para la generación
   //de la lista de marcadores de lugares
   void sendRequest(String intendedLocation) async {
-    List<Placemark> placemark =
-        await Geolocator().placemarkFromAddress(intendedLocation);
-    double latitude = placemark[0].position.latitude;
-    double longitude = placemark[0].position.longitude;
-    LatLng destination = LatLng(latitude, longitude);
-    _addMarker(destination, intendedLocation);
+    Geolocator().placemarkFromAddress(intendedLocation).then((result){
+          double latitude = result[0].position.latitude;
+          double longitude = result[0].position.longitude;
+          LatLng destination = LatLng (latitude, longitude);
+         mapController.animateCamera(CameraUpdate.newCameraPosition(CameraPosition(
+           
+           target:  destination,
+           zoom: 15.0
+         )));
+         _addMarker(destination, intendedLocation);
+          
+        });
+    
+    
     //Se guarda en una variable de tipo String las coordenadas
     //obtenidas en el api decodificado
-    String route = await _googleMapsServices.getRouteCoordinates(
-        _initialPosition, destination);
-    createRoute(route);
+   /* String route = await _googleMapsServices.getRouteCoordinates(
+        _initialPosition, destination);*/
+    //createRoute(route);
     notifyListeners();
   }
 
@@ -152,5 +164,9 @@ class AppState with ChangeNotifier {
   void onCreated(GoogleMapController controller) {
     _mapController = controller;
     notifyListeners();
+  }
+
+  void dispose(){
+    _polyLines.clear();
   }
 }
